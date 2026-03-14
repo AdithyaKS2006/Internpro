@@ -1,0 +1,48 @@
+# Project Architecture and Workflow
+
+The project has been modernized to a **Serverless Architecture** using **React (Frontend)** and **Supabase (Backend as a Service)**. This means the heavy lifting—authentication, database, and business logic—is handled by Supabase, while the React app serves as the user interface.
+
+## 1. High-Level Architecture
+- **Frontend**: A standard React application (SPA) that runs in the browser. It communicates directly with Supabase API.
+- **Backend & Database**: Hosted on Supabase (PostgreSQL). There is no longer a need for a separate Python/Node.js server for core features.
+- **Authentication**: Managed by Supabase Auth (supports Email/Password).
+
+## 2. Core Workflows & Logic
+
+### A. Authentication & User Roles
+- **Sign Up**: When a user registers, they are created in Supabase's secure Auth system.
+- **Profile Creation**: A database **Trigger** automatically creates a public profile entry for them.
+- **Roles**: Users are assigned roles (`student`, `placement_staff`, `faculty`, `employer`). The frontend uses these roles to determine which Dashboard to show.
+
+### B. Internship Posting (Staff/Employers)
+- **Posting**: Employers or Placement Staff fill out a form on their dashboard.
+- **Data Flow**: The form data is sent directly to the `internships` table in Supabase.
+- **Verification**: If an Employer posts, the status is "pending". Placement Staff can see these and "Verify" them, making them visible to students.
+
+### C. Student Application & Matching (The "Smart" Part)
+- **Matching Algorithm**: When you view an internship, a **Database Function** (`get_matched_students`) runs in the background.
+    - It compares the **Student's Skills** with the **Internship's Required Skills**.
+    - It adds a bonus score if the **Department** matches.
+    - If the match score > 30%, the student is recommended.
+- **Applying**: Students click "Apply", creating a record in the `applications` table.
+
+### D. Automated Notifications (Triggers)
+The system feels "alive" because of database triggers that react to changes instantly:
+- **New Application Trigger**: When a student applies, a trigger fires -> **Notifies Placement Staff**.
+- **Status Change Trigger**: When Staff/Faculty update an application status (e.g., to "Shortlisted"), a trigger fires -> **Notifies the Student**.
+- **Certificate Trigger**: When a certificate is generated, a trigger fires -> **Notifies the Student**.
+
+## 3. File Structure
+- **`frontend/src/pages/*Dashboard.js`**: The main UI for each user role.
+- **`frontend/src/supabaseClient.js`**: The bridge between the React app and your Supabase backend.
+- **`supabase_schema.sql`**: Defines the database tables (Profiles, Internships, Applications).
+- **`supabase_functions.sql`**: Contains the "brain" of the backend—the matching logic and notification triggers explained above.
+
+## 4. How to Run It
+Since the backend logic is in the cloud (Supabase), you only need to run the frontend:
+
+```bash
+cd frontend
+npm start
+``` 
+*The application will start at `http://localhost:3000`.*
