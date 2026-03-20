@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://AdithyaKS2006.github.io/Internpro/",
   "private": true,
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",

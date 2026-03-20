@@ -13,6 +13,7 @@ from datetime import datetime, timezone, timedelta
 import jwt
 from passlib.context import CryptContext
 import base64
+import google.generativeai as genai
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -28,9 +29,23 @@ security = HTTPBearer()
 SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'your-secret-key-change-in-production')
 ALGORITHM = "HS256"
 
+# Configure Gemini AI
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+ai_model = genai.GenerativeModel('gemini-1.5-flash')
+
 print(f"Loaded CORS origins: {[origin.strip() for origin in os.environ.get('CORS_ORIGINS', '*').split(',') if origin.strip()]}")
 
 app = FastAPI()
+
+# Task 17: Fixed CORS Configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=[origin.strip() for origin in os.environ.get('CORS_ORIGINS', '*').split(',') if origin.strip()],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 api_router = APIRouter(prefix="/api")
 
 # ===== MODELS =====
@@ -66,12 +81,16 @@ class User(UserBase):
     created_at: str
 
 class StudentProfile(BaseModel):
-    user_id: str
+    user_id: Optional[str] = None
+    university: Optional[str] = None
+    major: Optional[str] = None
+    graduation_year: Optional[int] = None
+    cgpa: Optional[float] = None
     skills: List[str] = []
+    bio: Optional[str] = None
+    linkedin: Optional[str] = None
     resume_url: Optional[str] = None
     cover_letter: Optional[str] = None
-    cgpa: Optional[float] = None
-    graduation_year: Optional[int] = None
     interests: List[str] = []
 
 class InternshipBase(BaseModel):
@@ -96,6 +115,22 @@ class Internship(InternshipBase):
     posted_by_role: str
     created_at: str
     applicant_count: int = 0
+
+class CertificateManualCreate(BaseModel):
+    title: str
+    issuing_organization: str
+    issue_date: str
+    certificate_url: Optional[str] = None
+
+class Certificate(BaseModel):
+    id: str
+    student_id: str
+    title: str
+    issuing_organization: str
+    issue_date: str
+    certificate_url: Optional[str] = None
+    is_manual: bool = True
+    created_at: str
 
 class ApplicationBase(BaseModel):
     internship_id: str
@@ -147,9 +182,17 @@ class Certificate(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str
     student_id: str
-    internship_id: str
+    internship_id: Optional[str] = None
     issued_at: str
     certificate_data: Dict[str, Any]
+    is_manual: Optional[bool] = False
+
+class ManualCertificateCreate(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    title: str
+    issuing_organization: str
+    issue_date: str
+    certificate_url: Optional[str] = None
 
 class Notification(BaseModel):
     model_config = ConfigDict(extra="ignore")
@@ -159,6 +202,66 @@ class Notification(BaseModel):
     type: str
     read: bool = False
     created_at: str
+
+class Badge(BaseModel):
+    id: str
+    user_id: str
+    key: str
+    name: str
+    description: str
+    icon: str
+    awarded_at: str
+
+class ProgressData(BaseModel):
+    radar_data: List[Dict[str, Any]]
+    scores: Dict[str, float]
+    total_points: int
+    quizzes_completed: int
+
+class ProjectBase(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    title: str
+    description: str
+    github_url: Optional[str] = None
+    live_url: Optional[str] = None
+    tech_stack: List[str] = []
+
+class Project(ProjectBase):
+    id: str
+    user_id: str
+    created_at: str
+
+class BadgeBase(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    user_id: str
+    key: str
+    name: str
+    description: str
+    icon: str
+
+class Badge(BadgeBase):
+    id: str
+    earned_at: str
+
+class ChatRequest(BaseModel):
+    message: str
+
+class QuizQuestion(BaseModel):
+    id: str
+    text: str
+    options: List[str]
+    correct_answer: int # Index of correct option
+
+class Quiz(BaseModel):
+    id: str
+    title: str
+    category: str # e.g., 'technical', 'logical', 'verbal'
+    difficulty: str # 'beginner', 'intermediate', 'advanced'
+    questions: List[QuizQuestion]
+    points: int
+
+class QuizSubmission(BaseModel):
+    answers: List[int] # List of selected option indices
 
 # ===== UTILITY FUNCTIONS =====
 
@@ -197,6 +300,30 @@ async def create_notification(user_id: str, message: str, notification_type: str
         "created_at": datetime.now(timezone.utc).isoformat()
     }
     await db.notifications.insert_one(notification)
+
+async def award_badge(user_id: str, badge_key: str, badge_name: str, description: str, icon: str):
+    existing = await db.badges.find_one({"user_id": user_id, "key": badge_key})
+    if existing:
+        return None
+        
+    badge_doc = {
+        "id": str(uuid.uuid4()),
+        "user_id": user_id,
+        "key": badge_key,
+        "name": badge_name,
+        "description": description,
+        "icon": icon,
+        "earned_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    await db.badges.insert_one(badge_doc)
+    
+    await create_notification(
+        user_id,
+        f"You earned a new badge: {badge_name}!",
+        "badge_earned"
+    )
+    return badge_doc
 
 def match_students_to_internship(internship: Dict, students: List[Dict]) -> List[Dict]:
     """Simple rule-based matching algorithm"""
@@ -273,6 +400,8 @@ async def register(user_data: UserRegister):
     
     return {
         "token": token,
+        "access_token": token,
+        "token_type": "bearer",
         "user": {
             "id": user_id,
             "email": user_data.email,
@@ -291,6 +420,8 @@ async def login(credentials: UserLogin):
     
     return {
         "token": token,
+        "access_token": token,
+        "token_type": "bearer",
         "user": {
             "id": user['id'],
             "email": user['email'],
@@ -339,6 +470,80 @@ async def update_student_profile(profile_data: StudentProfile, current_user: Dic
     )
     
     return {"message": "Profile updated successfully"}
+
+@api_router.get("/students/progress")
+async def get_student_progress(current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can access progress")
+        
+    # Aggregate quiz results by category
+    results = await db.quiz_results.find({"user_id": current_user['user_id']}).to_list(length=100)
+    
+    # Default scores (radar chart axes)
+    radar_map = {
+        "technical": "Technical Skills",
+        "logical": "Logical Reasoning",
+        "verbal": "Verbal Ability",
+        "soft_skills": "Communication",
+        "projects": "Projects"
+    }
+    
+    cat_scores = {k: 0 for k in radar_map.keys()}
+    cat_counts = {k: 0 for k in radar_map.keys()}
+    
+    for r in results:
+        quiz = await db.quizzes.find_one({"id": r['quiz_id']})
+        if quiz:
+            cat = quiz['category']
+            if cat in cat_scores:
+                cat_scores[cat] += r['score']
+                cat_counts[cat] += 1
+                
+    # Average out the percentages
+    for cat in cat_scores:
+        if cat_counts[cat] > 0:
+            cat_scores[cat] = int(cat_scores[cat] / cat_counts[cat])
+            
+    # Calculate Project score (20 points per project, cap 100)
+    project_count = await db.projects.count_documents({"user_id": current_user['user_id']})
+    cat_scores["projects"] = min(project_count * 20, 100)
+    
+    # Format for Recharts RadarChart
+    radar_data = [
+        {"subject": radar_map[k], "A": cat_scores[k], "fullMark": 100}
+        for k in radar_map.keys()
+    ]
+    
+    # Task 17: Real Progress Metrics
+    # 1. Courses Completed: Manual certificates + Internship certificates
+    manual_certs = await db.certificates.count_documents({"student_id": current_user['user_id'], "is_manual": True})
+    internship_certs = await db.certificates.count_documents({"student_id": current_user['user_id'], "is_manual": False})
+    courses_completed = manual_certs + internship_certs
+    
+    # 2. Challenges Solved: Unique quizzes with score >= 70
+    high_score_quizzes = await db.quiz_results.distinct("quiz_id", {"user_id": current_user['user_id'], "score": {"$gte": 70}})
+    challenges_solved = len(high_score_quizzes)
+    
+    # 3. Total counts
+    total_challenges = await db.quizzes.count_documents({})
+    total_courses = 8 # Hardcoded target as requested in task description
+    
+    # 4. Aptitude Score: Average of logical and verbal quiz scores
+    aptitude_cats = ['logical', 'verbal']
+    apt_scores = [cat_scores[c] for c in aptitude_cats if cat_counts[c] > 0]
+    aptitude_score = int(sum(apt_scores) / len(apt_scores)) if apt_scores else 0
+    
+    return {
+        "scores": cat_scores,
+        "radar_data": radar_data,
+        "total_points": sum(r.get('points', 0) for r in results),
+        "quizzes_completed": len(results),
+        "courses_completed": courses_completed,
+        "total_courses": total_courses,
+        "challenges_solved": challenges_solved,
+        "total_challenges": max(total_challenges, 1), # Avoid division by zero in frontend
+        "aptitude_score": aptitude_score
+    }
 
 # ===== INTERNSHIP ENDPOINTS =====
 
@@ -475,7 +680,133 @@ async def create_application(application: ApplicationCreate, current_user: Dict 
             "new_application"
         )
     
+    await award_badge(current_user['user_id'], 'first_application', 'Go Getter', 'Submitted your first internship application', 'rocket')
+    
     return Application(**application_doc)
+
+# ===== QUIZ ENDPOINTS =====
+
+@api_router.get("/quizzes")
+async def get_quizzes(category: Optional[str] = None):
+    query = {}
+    if category:
+        query["category"] = category
+    quizzes = await db.quizzes.find(query, {"_id": 0}).to_list(length=100)
+    return quizzes
+
+@api_router.get("/quizzes/{quiz_id}")
+async def get_quiz(quiz_id: str):
+    quiz = await db.quizzes.find_one({"id": quiz_id}, {"_id": 0})
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz not found")
+    # Hide correct answers when fetching the quiz for taking
+    for q in quiz['questions']:
+        q.pop('correct_answer', None)
+    return quiz
+
+@api_router.post("/quizzes/{quiz_id}/submit")
+async def submit_quiz(quiz_id: str, submission: QuizSubmission, current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can submit quizzes")
+    
+    quiz = await db.quizzes.find_one({"id": quiz_id})
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz not found")
+    
+    correct_count: int = 0
+    total_questions = len(quiz['questions'])
+    for i, q in enumerate(quiz['questions']):
+        if i < len(submission.answers) and submission.answers[i] == q['correct_answer']:
+            correct_count += 1
+            
+    score_percentage = (correct_count / total_questions) * 100
+    points_earned = int(quiz['points'] * (score_percentage / 100))
+    
+    result = {
+        "user_id": current_user['user_id'],
+        "quiz_id": quiz_id,
+        "score": score_percentage,
+        "points": points_earned,
+        "submitted_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    await db.quiz_results.insert_one(result)
+    
+    # Award Badge if score is high
+    if score_percentage >= 80:
+        await award_badge(current_user['user_id'], 'quiz_master', 'Quiz Master', f'Scored {score_percentage}% on {quiz["title"]}', 'trophy')
+    
+    return {
+        "score": score_percentage,
+        "points": points_earned,
+        "message": f"Quiz submitted! You scored {score_percentage}%"
+    }
+
+# ===== NOTIFICATION ENDPOINTS =====
+
+@api_router.get("/notifications", response_model=List[Notification])
+async def get_notifications(current_user: Dict = Depends(get_current_user)):
+    notifications = await db.notifications.find(
+        {"user_id": current_user['user_id']},
+        {"_id": 0}
+    ).sort("created_at", -1).limit(50).to_list(50)
+    return notifications
+
+@api_router.put("/notifications/{notification_id}/read")
+async def mark_notification_read(notification_id: str, current_user: Dict = Depends(get_current_user)):
+    await db.notifications.update_one(
+        {"id": notification_id, "user_id": current_user['user_id']},
+        {"$set": {"read": True}}
+    )
+    return {"message": "Notification marked as read"}
+
+# ===== PROJECTS ENDPOINTS =====
+
+@api_router.post("/projects", response_model=Project)
+async def create_project(project: ProjectBase, current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can post projects")
+        
+    project_id = str(uuid.uuid4())
+    project_doc = project.model_dump()
+    project_doc.update({
+        "id": project_id,
+        "user_id": current_user['user_id'],
+        "created_at": datetime.now(timezone.utc).isoformat()
+    })
+    
+    await db.projects.insert_one(project_doc)
+    
+    await award_badge(current_user['user_id'], 'project_pro', 'Project Pro', 'Added a project to your portfolio', 'code')
+    
+    return project_doc
+
+@api_router.get("/projects", response_model=List[Project])
+async def get_projects(current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can view their projects here")
+        
+    cursor = db.projects.find({"user_id": current_user['user_id']}, {"_id": 0})
+    projects = await cursor.to_list(length=100)
+    return projects
+
+@api_router.delete("/projects/{project_id}")
+async def delete_project(project_id: str, current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can delete projects")
+        
+    result = await db.projects.delete_one({"id": project_id, "user_id": current_user['user_id']})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Project not found or not yours")
+        
+    return {"message": "Project deleted successfully"}
+
+# ===== BADGES ENDPOINTS =====
+
+@api_router.get("/badges", response_model=List[Badge])
+async def get_badges(current_user: Dict = Depends(get_current_user)):
+    badges = await db.badges.find({"user_id": current_user['user_id']}, {"_id": 0}).to_list(1000)
+    return badges
 
 @api_router.get("/applications", response_model=List[Application])
 async def get_applications(
@@ -678,6 +1009,29 @@ async def get_certificates(current_user: Dict = Depends(get_current_user)):
     certificates = await db.certificates.find(query, {"_id": 0}).to_list(1000)
     return certificates
 
+@api_router.post("/certificates/manual", response_model=Certificate)
+async def add_manual_certificate(certificate: CertificateManualCreate, current_user: Dict = Depends(get_current_user)):
+    if current_user['role'] != 'student':
+        raise HTTPException(status_code=403, detail="Only students can add manual certificates")
+        
+    cert_id = str(uuid.uuid4())
+    cert_doc = certificate.model_dump()
+    cert_doc.update({
+        "id": cert_id,
+        "student_id": current_user['user_id'],
+        "is_manual": True,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    })
+    
+    await db.certificates.insert_one(cert_doc)
+    
+    # Award badge for first certificate
+    count = await db.certificates.count_documents({"student_id": current_user['user_id']})
+    if count == 1:
+        await award_badge(current_user['user_id'], 'certified_seeker', 'Certified Seeker', 'Added your first external certificate', 'award')
+        
+    return cert_doc
+
 # ===== NOTIFICATION ENDPOINTS =====
 
 @api_router.get("/notifications", response_model=List[Notification])
@@ -695,6 +1049,40 @@ async def mark_notification_read(notification_id: str, current_user: Dict = Depe
         {"$set": {"read": True}}
     )
     return {"message": "Notification marked as read"}
+
+@api_router.get("/badges", response_model=List[Badge])
+async def get_badges(current_user: Dict = Depends(get_current_user)):
+    badges = await db.badges.find({"user_id": current_user['user_id']}, {"_id": 0}).to_list(100)
+    return badges
+
+@api_router.get("/students/progress", response_model=ProgressData)
+async def get_student_progress(current_user: Dict = Depends(get_current_user)):
+    # Calculate mock progress data based on actual user data if available
+    # For now, return a consistent structure that the frontend expects
+    
+    # Check if student has applied to anything
+    app_count = await db.applications.count_documents({"student_id": current_user['user_id']})
+    cert_count = await db.certificates.count_documents({"student_id": current_user['user_id']})
+    proj_count = await db.projects.count_documents({"user_id": current_user['user_id']})
+    
+    radar_data = [
+        {"subject": "Technical", "A": min(100, 40 + proj_count * 15), "fullMark": 100},
+        {"subject": "Communication", "A": 60, "fullMark": 100},
+        {"subject": "Problem Solving", "A": 75, "fullMark": 100},
+        {"subject": "Leadership", "A": 50, "fullMark": 100},
+        {"subject": "Soft Skills", "A": 65, "fullMark": 100}
+    ]
+    
+    return {
+        "radar_data": radar_data,
+        "scores": {
+            "technical": 40 + proj_count * 15,
+            "communication": 60,
+            "problem_solving": 75
+        },
+        "total_points": app_count * 10 + cert_count * 50 + proj_count * 30,
+        "quizzes_completed": 0
+    }
 
 # ===== ANALYTICS ENDPOINTS =====
 
@@ -753,14 +1141,6 @@ async def get_matched_students(internship_id: str, current_user: Dict = Depends(
 @api_router.get("/")
 async def root():
     return {"message": "InternPro API is running", "status": "ok"}
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=[origin.strip() for origin in os.environ.get('CORS_ORIGINS', '*').split(',') if origin.strip()],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Include router
 app.include_router(api_router)

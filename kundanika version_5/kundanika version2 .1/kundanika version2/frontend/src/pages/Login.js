@@ -34,15 +34,18 @@ export default function Login({ setUser }) {
       if (profileError) {
         console.error('Error fetching profile:', profileError);
         // Fallback to auth metadata if profile fetch fails (though it shouldn't)
-        const userWithProfile = { ...data.user, ...data.user.user_metadata };
+        const userWithProfile = { ...data.user, ...profile };
+        // Use access_token from supabase session or custom backend
+        // Since this Login.js uses Supabase, it should be consistent with App.js
         localStorage.setItem('user', JSON.stringify(userWithProfile));
         setUser(userWithProfile);
       } else {
+        // If profile fetch is successful, use the combined data
         const userWithProfile = { ...data.user, ...profile };
         localStorage.setItem('user', JSON.stringify(userWithProfile));
         setUser(userWithProfile);
       }
-
+      
       toast.success('Login successful!');
       navigate('/');
     } catch (error) {

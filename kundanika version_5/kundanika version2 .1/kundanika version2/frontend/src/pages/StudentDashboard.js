@@ -11,6 +11,8 @@ import { toast } from 'sonner';
 import { supabase } from '../supabaseClient';
 import InternshipCard from './InternshipCard';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
+import { Progress } from '@/components/ui/progress';
+import { TrendingUp } from 'lucide-react';
 
 export default function StudentDashboard({ user, logout }) {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -40,12 +42,23 @@ export default function StudentDashboard({ user, logout }) {
   ];
 
   // Mock data for skill analytics
-  const skillData = [
-    { subject: 'Logical Reasoning', A: 90, fullMark: 100 },
-    { subject: 'Technical Coding', A: 75, fullMark: 100 },
-    { subject: 'Soft Skills', A: 80, fullMark: 100 },
-    { subject: 'Aptitude', A: 85, fullMark: 100 },
-  ];
+  const [progress, setProgress] = useState({
+    scores: { technical: 0, logical: 0, verbal: 0, soft_skills: 0, projects: 0 },
+    radar_data: [
+      { subject: 'Technical Skills', A: 0, fullMark: 100 },
+      { subject: 'Logical Reasoning', A: 0, fullMark: 100 },
+      { subject: 'Verbal Ability', A: 0, fullMark: 100 },
+      { subject: 'Communication', A: 0, fullMark: 100 },
+      { subject: 'Projects', A: 0, fullMark: 100 }
+    ],
+    total_points: 0,
+    quizzes_completed: 0,
+    courses_completed: 0,
+    total_courses: 8,
+    challenges_solved: 0,
+    total_challenges: 1,
+    aptitude_score: 0
+  });
 
   // Mock data for opportunities
   const opportunities = [
@@ -101,7 +114,28 @@ export default function StudentDashboard({ user, logout }) {
         setLoading(false);
       }
     };
+    const fetchProgress = async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return;
+
+        const response = await fetch('http://localhost:8000/api/students/progress', {
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`
+          }
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          setProgress(data);
+        }
+      } catch (error) {
+        console.error("Error fetching progress:", error);
+      }
+    };
+
     fetchAllData();
+    fetchProgress();
   }, []);
 
   const fetchApplications = useCallback(async () => {
@@ -391,19 +425,85 @@ export default function StudentDashboard({ user, logout }) {
                   </CardHeader>
                   <CardContent className="h-80">
                     <ResponsiveContainer width="100%" height="100%">
-                      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={skillData}>
+                      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={progress.radar_data}>
                         <PolarGrid />
                         <PolarAngleAxis dataKey="subject" />
                         <PolarRadiusAxis angle={30} domain={[0, 100]} />
                         <Radar
                           name="Skills"
                           dataKey="A"
-                          stroke="#8884d8"
-                          fill="#8884d8"
+                          stroke="#3b82f6"
+                          fill="#3b82f6"
                           fillOpacity={0.6}
                         />
                       </RadarChart>
                     </ResponsiveContainer>
+                  </CardContent>
+                </Card>
+              </section>
+
+              {/* Progress Tracker Section */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border-none shadow-lg bg-white/50 backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold flex items-center text-blue-700">
+                      <TrendingUp className="mr-2 h-6 w-6" />
+                      Learning Progress
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm font-medium">
+                        <span className="text-gray-600">Courses Completed</span>
+                        <span className="text-blue-600 font-bold">{progress.courses_completed}/{progress.total_courses}</span>
+                      </div>
+                      <Progress value={(progress.courses_completed / progress.total_courses) * 100} className="h-2 bg-blue-100" indicatorClassName="bg-blue-600" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm font-medium">
+                        <span className="text-gray-600">Challenges Solved</span>
+                        <span className="text-purple-600 font-bold">{progress.challenges_solved}/{progress.total_challenges}</span>
+                      </div>
+                      <Progress value={(progress.challenges_solved / progress.total_challenges) * 100} className="h-2 bg-purple-100" indicatorClassName="bg-purple-600" />
+                    </div>
+
+                    <div className="pt-4 grid grid-cols-2 gap-4">
+                      <div className="p-4 rounded-xl bg-blue-50 border border-blue-100">
+                        <p className="text-xs text-blue-600 font-semibold uppercase tracking-wider">Aptitude Score</p>
+                        <p className="text-2xl font-bold text-blue-900">{progress.aptitude_score}%</p>
+                      </div>
+                      <div className="p-4 rounded-xl bg-purple-50 border border-purple-100">
+                        <p className="text-xs text-purple-600 font-semibold uppercase tracking-wider">Skill Points</p>
+                        <p className="text-2xl font-bold text-purple-900">{progress.total_points}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-none shadow-lg bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold flex items-center">
+                      <Target className="mr-2 h-6 w-6" />
+                      Current Focus
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="bg-white/10 rounded-lg p-4 backdrop-blur-md border border-white/20">
+                      <h4 className="font-bold flex items-center">
+                        <div className="h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse" />
+                        Next Milestone
+                      </h4>
+                      <p className="text-sm opacity-90 mt-1">Complete "Advanced React Patterns" to reach 75% Technical Score</p>
+                      <Button variant="secondary" size="sm" className="mt-4 w-full bg-white text-indigo-700 hover:bg-white/90">
+                        Resume Learning
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between text-sm opacity-80 pt-2">
+                      <span>Daily Goal</span>
+                      <span>2/3 hrs completed</span>
+                    </div>
+                    <Progress value={66} className="h-1.5 bg-white/20" indicatorClassName="bg-green-400" />
                   </CardContent>
                 </Card>
               </section>

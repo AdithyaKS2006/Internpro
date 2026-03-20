@@ -1,0 +1,548 @@
+nohup: ignoring input
+/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/server.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [23083]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Loaded CORS origins: ['http://localhost:3000', 'https://localhost:3000', 'http://192.168.29.85:3000', 'http://172.18.16.1:3000', 'https://172.18.16.1:3000', 'https://your-frontend-ngrok-url.ngrok-free.app', 'http://192.168.29.85:3000', 'https://internpro.qzz.io', 'http://internpro.qzz.io', 'https://hydrochloric-reina-myrtaceous.ngrok-free.dev', 'https://hydrochloric-reina-myrtaceous.ngrok-free.dev', 'https://hydrochloric-reina-myrtaceous.ngrok-free.dev']
+INFO:     127.0.0.1:57058 - "HEAD /api/projects HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:57062 - "HEAD /api/badges HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:57064 - "HEAD /api/quizzes HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:37296 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:37304 - "GET /api/badges HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:37308 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37318 - "GET /api/notifications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52780 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52782 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52802 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52794 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52812 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52780 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52802 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52812 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52794 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52782 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52802 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52780 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52794 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52812 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52782 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46754 - "OPTIONS /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46764 - "OPTIONS /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46778 - "OPTIONS /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46792 - "OPTIONS /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46808 - "OPTIONS /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46814 - "OPTIONS /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46754 - "OPTIONS /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46764 - "OPTIONS /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46778 - "OPTIONS /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46792 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46808 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46814 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46754 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46778 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46764 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46792 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46814 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46808 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38942 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38956 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:38956 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:42546 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43582 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43582 - "GET /api/students/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43596 - "GET /api/internships HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43598 - "GET /api/applications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43604 - "GET /api/certificates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43618 - "GET /api/notifications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43582 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43624 - "GET /api/badges HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43618 - "GET /api/students/progress HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43598 - "GET /api/students/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43604 - "GET /api/internships HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43582 - "GET /api/applications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43624 - "GET /api/certificates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43618 - "GET /api/notifications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43596 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43582 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43598 - "GET /api/badges HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43604 - "GET /api/students/progress HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:43618 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53618 - "OPTIONS /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53632 - "POST /api/applications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52912 - "GET /api/students/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52914 - "GET /api/internships HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52916 - "GET /api/applications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52926 - "GET /api/certificates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52930 - "GET /api/notifications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52936 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52912 - "GET /api/badges HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52914 - "GET /api/students/progress HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52936 - "GET /api/students/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52926 - "GET /api/applications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52930 - "GET /api/internships HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52912 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52916 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52912 - "GET /api/certificates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52914 - "GET /api/notifications HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52936 - "GET /api/badges HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52926 - "GET /api/students/progress HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52930 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52524 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52524 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52536 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52544 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52546 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52552 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52524 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52536 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52544 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52546 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52524 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52552 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52536 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52544 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52546 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52552 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40040 - "POST /api/applications HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42828 - "GET /api/internships HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:42106 - "OPTIONS /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42108 - "OPTIONS /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "OPTIONS /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42122 - "OPTIONS /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42106 - "OPTIONS /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "OPTIONS /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42108 - "OPTIONS /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "OPTIONS /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42122 - "OPTIONS /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "OPTIONS /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42106 - "OPTIONS /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42122 - "OPTIONS /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "OPTIONS /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "OPTIONS /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42108 - "GET /api/internships HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1138, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 448, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 286, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 21 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'skills_required'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'float_parsing', 'loc': ('response', 0, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Unpaid'}
+  {'type': 'missing', 'loc': ('response', 0, 'duration_months'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 1, 'skills_required'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'float_parsing', 'loc': ('response', 1, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 1, 'duration_months'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 2, 'skills_required'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'float_parsing', 'loc': ('response', 2, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 2, 'duration_months'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/server.py", line 546, in get_internships
+    GET /api/internships
+INFO:     127.0.0.1:42122 - "OPTIONS /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42106 - "OPTIONS /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "OPTIONS /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42144 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42122 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "GET /api/internships HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1138, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 448, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 286, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 21 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'skills_required'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'float_parsing', 'loc': ('response', 0, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Unpaid'}
+  {'type': 'missing', 'loc': ('response', 0, 'duration_months'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 1, 'skills_required'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'float_parsing', 'loc': ('response', 1, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 1, 'duration_months'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 2, 'skills_required'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'float_parsing', 'loc': ('response', 2, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 2, 'duration_months'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/server.py", line 546, in get_internships
+    GET /api/internships
+INFO:     127.0.0.1:42122 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42144 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42116 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42106 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42106 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42144 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40070 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40070 - "GET /api/internships HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1138, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 448, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 286, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 21 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'skills_required'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'float_parsing', 'loc': ('response', 0, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Unpaid'}
+  {'type': 'missing', 'loc': ('response', 0, 'duration_months'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 1, 'skills_required'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'float_parsing', 'loc': ('response', 1, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 1, 'duration_months'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 2, 'skills_required'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'float_parsing', 'loc': ('response', 2, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 2, 'duration_months'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/server.py", line 546, in get_internships
+    GET /api/internships
+INFO:     127.0.0.1:40088 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40084 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40114 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40102 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40084 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40102 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40114 - "GET /api/internships HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1138, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 95, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 153, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 448, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/venv/lib/python3.12/site-packages/fastapi/routing.py", line 286, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 21 validation errors:
+  {'type': 'missing', 'loc': ('response', 0, 'skills_required'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'float_parsing', 'loc': ('response', 0, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Unpaid'}
+  {'type': 'missing', 'loc': ('response', 0, 'duration_months'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 0, 'created_at'), 'msg': 'Field required', 'input': {'id': '1', 'employer_id': 'employer-1', 'title': 'Software Engineering Intern', 'company': 'Tech Corp', 'location': 'Remote', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'Node.js'], 'stipend': 'Unpaid', 'duration': '3 months', 'posted_at': '2026-03-19T09:27:16.258Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Engineering'}}
+  {'type': 'missing', 'loc': ('response', 1, 'skills_required'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'float_parsing', 'loc': ('response', 1, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 1, 'duration_months'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 1, 'created_at'), 'msg': 'Field required', 'input': {'id': '2', 'employer_id': 'employer-1', 'title': 'Frontend Developer Intern', 'company': 'Design Studio', 'location': 'New York', 'type': 'Part-time', 'description': 'Mock internship for testing', 'requirements': ['React', 'CSS'], 'stipend': 'Paid', 'duration': '6 months', 'posted_at': '2026-03-19T09:27:25.425Z', 'is_verified': True, 'applicant_count': 0, 'department': 'Design'}}
+  {'type': 'missing', 'loc': ('response', 2, 'skills_required'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'float_parsing', 'loc': ('response', 2, 'stipend'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'Paid'}
+  {'type': 'missing', 'loc': ('response', 2, 'duration_months'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'application_deadline'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'posted_by_role'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+  {'type': 'missing', 'loc': ('response', 2, 'created_at'), 'msg': 'Field required', 'input': {'id': '3', 'employer_id': 'employer-1', 'title': 'Data Science Intern', 'company': 'AI Labs', 'location': 'London', 'type': 'Full-time', 'description': 'Mock internship for testing', 'requirements': ['Python', 'ML'], 'stipend': 'Paid', 'duration': '4 months', 'posted_at': '2026-03-19T09:27:25.426Z', 'is_verified': True, 'applicant_count': 0, 'department': 'AI'}}
+
+  File "/home/adithya-k-s/PROJECTS/interpro_with_proper_working/kundanika version_5/kundanika version2 .1/kundanika version2/backend/server.py", line 546, in get_internships
+    GET /api/internships
+INFO:     127.0.0.1:40088 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40084 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40102 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40122 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40084 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59922 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59934 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59936 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59940 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59952 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59922 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59952 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59940 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59936 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59922 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59934 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59952 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59936 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40232 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40218 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40236 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40256 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40246 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40236 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40218 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40232 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40246 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40236 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40218 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40256 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40232 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40246 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40956 - "OPTIONS /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40962 - "POST /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40962 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46906 - "OPTIONS /api/certificates/manual HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46916 - "POST /api/certificates/manual HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48562 - "OPTIONS /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48564 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32956 - "OPTIONS /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32958 - "PUT /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51376 - "PUT /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "OPTIONS /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "OPTIONS /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "OPTIONS /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "OPTIONS /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "OPTIONS /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "OPTIONS /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "OPTIONS /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "OPTIONS /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "OPTIONS /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "OPTIONS /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "OPTIONS /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "OPTIONS /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "GET /api/students/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "GET /api/certificates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "GET /api/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "GET /api/badges HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "GET /api/internships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "GET /api/applications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "GET /api/quizzes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "GET /api/students/progress HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
