@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, LogOut, User, Briefcase, FileText, Award, Bell, Search, X, ChevronRight, Star, Trophy, Target, BookOpen, Users, Globe, MessageCircle, BarChart3, Plus, Download, Github, Play, Video, FileEdit } from 'lucide-react';
+import { GraduationCap, LogOut, User, Briefcase, FileText, Award, Bell, Search, X, Star, Trophy, Target, BookOpen, Users, Globe, MessageCircle, BarChart3, Plus, Download, Github, Play, Video, FileEdit } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '../supabaseClient';
 import InternshipCard from './InternshipCard';
